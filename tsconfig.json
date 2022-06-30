@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@counter/*": ["src/features/counter/*"]
-    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,5 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
