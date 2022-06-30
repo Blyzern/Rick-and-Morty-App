@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/css": "^11.9.0",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
@@ -22,7 +23,7 @@
     "redux-first-history": "^5.0.12",
     "redux-root-saga": "^1.1.4",
     "redux-saga": "^1.1.3",
-    "typescript": "^4.6.0",
+    "typescript": "^4.7.4",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
