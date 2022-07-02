@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'src/app/store';
 
 export interface HomeState {
-  Data: Array<object>;
+  //creare un file apparte homeSlice.Interface.ts
+  Data: object;
   Pages: object;
   isLoading: boolean;
   Status: string;
