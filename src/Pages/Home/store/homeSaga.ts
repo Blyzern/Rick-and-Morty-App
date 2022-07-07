@@ -1,18 +1,20 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
-import { setHomeData, setPages, setLoading, getData } from './homeSlice';
 import { fetchData } from 'src/utils/fetchData';
+import { isEmpty } from 'lodash';
+import { setHomeData, setLoading, getData } from './homeSlice';
 
 function* getSerie() {
-  const characters = 'https://rickandmortyapi.com/api/character';
+  const characters: string = 'https://rickandmortyapi.com/api/character';
   try {
     yield put(setLoading(true));
-    const { results } = yield call(fetchData, characters, 'GET');
-    console.log(
-      '🚀 ~ file: homeSaga.ts ~ line 10 ~ function*getSerie ~ results',
-      results
-    );
-    yield put(setHomeData(results));
-    yield put(setLoading(false));
+    const { data } = yield call(fetchData, characters, 'GET');
+    if (!isEmpty(data?.results)) {
+      const { results } = data;
+      yield put(setHomeData(results));
+      yield put(setLoading(false));
+      return;
+    }
+    console.log('Errore da Backend');
   } catch (error) {
     console.log(error);
   }

@@ -1,5 +1,5 @@
-//import { combineReducers } from 'redux';
-import { createBrowserHistory } from 'history';
+import { combineReducers } from 'redux';
+import { createBrowserHistory, History } from 'history';
 import { configureStore } from '@reduxjs/toolkit';
 import { createReduxHistoryContext } from 'redux-first-history';
 import homeReducer from 'src/Pages/Home/store/homeSlice';
@@ -12,10 +12,10 @@ const { createReduxHistory, routerMiddleware, routerReducer } =
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
-  reducer: {
+  reducer: combineReducers({
     home: homeReducer,
     router: routerReducer,
-  },
+  }),
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ thunk: false })
       .concat(sagaMiddleware)
@@ -24,5 +24,5 @@ export const store = configureStore({
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 
-export const history = createReduxHistory(store);
+export const history: History = createReduxHistory(store);
 sagaMiddleware.run(rootSaga);

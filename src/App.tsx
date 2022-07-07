@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from 'src/Pages/Home/Home';
 import './App.css';
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path='/' element={<Home />} />
     </Routes>
   );
 };

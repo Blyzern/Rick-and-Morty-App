@@ -1,12 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'src/app/store';
-
-export interface HomeState {
-  Data: Array<object>;
-  Pages: object;
-  isLoading: boolean;
-  Status: string;
-}
+import { HomeState } from './homeSlice.interface';
 
 const initialState: HomeState = {
   Data: [],
