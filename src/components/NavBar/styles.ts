@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const NavWrapper = styled.div`
   background-color: #4D485B; 
-  position: fixed;
+  position: sticky;
   top: 0;
   display: flex;
   align-items: center;

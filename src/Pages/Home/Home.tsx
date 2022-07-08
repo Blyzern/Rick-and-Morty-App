@@ -1,8 +1,8 @@
 import React, { useEffect, FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'src/app/store';
+import { CharacterBox } from 'src/components/CharacterBox';
 import { getData } from './store/homeSlice';
-import { Button } from './styled';
 
 // interface Props {} <-- this is needed to add props to a component
 export const Home: FC = () => {
@@ -10,5 +10,5 @@ export const Home: FC = () => {
   useEffect(() => {
     dispatch(getData());
   });
-  return <Button>Home</Button>;
+  return <CharacterBox name="Sanchez" image="" />;
 };
