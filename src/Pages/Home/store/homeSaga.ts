@@ -1,7 +1,7 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
-import { setHomeData, setLoading, getData } from './homeSlice';
 import { fetchData } from 'src/utils/fetchData';
 import { isEmpty } from 'lodash';
+import { setHomeData, setLoading, getData } from './homeSlice';
 
 function* getSerie() {
   const characters: string = 'https://rickandmortyapi.com/api/character';
@@ -10,10 +10,6 @@ function* getSerie() {
     const { data } = yield call(fetchData, characters, 'GET');
     if (!isEmpty(data?.results)) {
       const { results } = data;
-      console.log(
-        '🚀 ~ file: homeSaga.ts ~ line 13 ~ function*getSerie ~ results',
-        results
-      );
       yield put(setHomeData(results));
       yield put(setLoading(false));
       return;
