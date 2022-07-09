@@ -3,11 +3,15 @@ import { fetchData } from 'src/utils/fetchData';
 import { isEmpty } from 'lodash';
 import { setHomeData, setLoading, getData } from './homeSlice';
 
+type props = {
+  data: { info: {}; results: [] };
+};
+
 function* getSerie() {
   const characters: string = 'https://rickandmortyapi.com/api/character';
   try {
     yield put(setLoading(true));
-    const { data } = yield call(fetchData, characters, 'GET');
+    const { data }: props = yield call(fetchData, characters, 'GET');
     if (!isEmpty(data?.results)) {
       const { results } = data;
       yield put(setHomeData(results));

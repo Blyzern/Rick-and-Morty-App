@@ -1,6 +1,6 @@
 export interface HomeState {
-  Data: Array<object>;
-  Pages: object;
+  data: Array<object>;
+  pages: object;
   isLoading: boolean;
   Status: string;
 }
