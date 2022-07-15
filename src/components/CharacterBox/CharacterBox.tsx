@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { CharDataTypes } from 'src/Pages/Home/store/homeSlice.interface';
 import {
   Wrapper,
   Image,
@@ -8,15 +9,7 @@ import {
   CharacterInfo,
 } from './styled';
 
-type props = {
-  name: string;
-  image: string;
-  status: string;
-  species: string;
-  location: string;
-};
-
-export const CharacterBox: FC<props> = ({
+export const CharacterBox: FC<CharDataTypes> = ({
   name,
   image,
   status,
@@ -26,14 +19,15 @@ export const CharacterBox: FC<props> = ({
   return (
     <Wrapper>
       <Image src={image} />
-
       <InfoWrapper>
         <CharacterName>{name}</CharacterName>
         <CharacterInfo>
           {status} - {species}
         </CharacterInfo>
         <Caption>Last known location:</Caption>
-        <CharacterInfo>{location}</CharacterInfo>
+        <CharacterInfo>
+          {location !== undefined ? location.name : 'Unknown'}
+        </CharacterInfo>
       </InfoWrapper>
     </Wrapper>
   );

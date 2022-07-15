@@ -14,8 +14,8 @@ export const PageWrapper = styled.div`
 `;
 
 export const ComponentWrapper = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   width: 70vw;
   height: fit-content;
   display: flex;

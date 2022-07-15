@@ -1,10 +1,11 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
 import { fetchData } from 'src/utils/fetchData';
 import { isEmpty } from 'lodash';
+import { CharDataTypes } from './homeSlice.interface';
 import { setHomeData, setLoading, getData } from './homeSlice';
 
 type props = {
-  data: { info: {}; results: [] };
+  data: { info: {}; results: [CharDataTypes] };
 };
 
 function* getSerie() {

@@ -3,7 +3,7 @@ import { RootState } from 'src/app/store';
 import { HomeState } from './homeSlice.interface';
 
 const initialState: HomeState = {
-  data: [],
+  data: [{}],
   pages: {},
   isLoading: false,
   Status: 'idle',
@@ -14,10 +14,10 @@ export const homeSlice = createSlice({
   initialState,
   reducers: {
     getData: () => {},
-    setHomeData: (state, action: PayloadAction<Array<object>>) => {
+    setHomeData: (state, action: PayloadAction<[{}]>) => {
       state.data = action.payload;
     },
-    setPages: (state, action: PayloadAction<object>) => {
+    setPages: (state, action: PayloadAction<{}>) => {
       state.pages = action.payload;
     },
     setLoading: (state, action: PayloadAction<boolean>) => {

@@ -4,29 +4,13 @@ import { AppDispatch } from 'src/app/store';
 import { CharacterBox } from 'src/components/CharacterBox';
 import { characterSelector } from './store/homeSelectors';
 import { getData } from './store/homeSlice';
+import { CharDataTypes } from './store/homeSlice.interface';
 import { PageWrapper, ComponentWrapper } from './styled';
-
-interface props {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: object;
-  location: {
-    name: string;
-    url: string;
-  };
-  image: string;
-  episode: [];
-  url: string;
-  created: string;
-}
 
 export const Home: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const characters: [props] = useSelector(characterSelector);
+  const characters: [CharDataTypes] = useSelector(characterSelector);
+  console.log('🚀 ~ file: Home.tsx ~ line 13 ~ characters', characters);
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -40,7 +24,7 @@ export const Home: FC = () => {
             image={image}
             status={status}
             species={species}
-            location={location.name}
+            location={location}
           />
         ))}
       </ComponentWrapper>
