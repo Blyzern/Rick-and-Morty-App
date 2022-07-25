@@ -7,6 +7,7 @@ export const PageWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-image: url('https://media.cdn.adultswim.com/uploads/20210628/thumbnails/2_21628714375-RickMorty_Inside502.png');
   overflow: auto;
   ::-webkit-scrollbar {
     width: 0px;
@@ -14,7 +15,6 @@ export const PageWrapper = styled.div`
 `;
 
 export const Spacer = styled.p`
-  height: 4rem;
   width: 100%;
 `;
 

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Switch } from 'src/components/ToggleSwitch';
 import { changeLanguage, getCurrentLanguage } from 'src/services/i18n';
 import { pathnameSelector } from 'src/Pages/Home/store/charSelectors';
 import { useSelector } from 'react-redux';
@@ -29,9 +30,9 @@ export const NavBar: FC = () => {
           content={t('charBtn')}
           selected={isCurrentPage(charPage)}
         />
-        <button type="button" onClick={handleChangeLanguage}>
-          Language
-        </button>
+      </Nav>
+      <Nav>
+        <Switch event={handleChangeLanguage} />
       </Nav>
     </NavWrapper>
   );
