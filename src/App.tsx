@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Home } from 'src/Pages/Home/Home';
+import { Char } from 'src/Pages/Home/Char';
 import { NavBar } from './components/NavBar';
 import './App.css';
 
@@ -9,7 +9,7 @@ const App: FC = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Char />} />
       </Routes>
     </>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import './services/i18n';
 import { HistoryRouter as Router } from 'redux-first-history/rr6';
 import { store, history } from 'src/app/store';
 import { createRoot } from 'react-dom/client';

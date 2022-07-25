@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { createBrowserHistory, History } from 'history';
 import { configureStore } from '@reduxjs/toolkit';
 import { createReduxHistoryContext } from 'redux-first-history';
-import homeReducer from 'src/Pages/Home/store/homeSlice';
+import charReducer from 'src/Pages/Home/store/charSlice';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
 
@@ -13,7 +13,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: combineReducers({
-    home: homeReducer,
+    home: charReducer,
     router: routerReducer,
   }),
   middleware: (getDefaultMiddleware) =>

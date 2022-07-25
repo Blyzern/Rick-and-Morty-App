@@ -13,9 +13,12 @@ export const PageWrapper = styled.div`
   }
 `;
 
+export const Spacer = styled.p`
+  height: 4rem;
+  width: 100%;
+`;
+
 export const ComponentWrapper = styled.div`
-  margin-top: 4rem;
-  margin-bottom: 2rem;
   width: 70vw;
   height: fit-content;
   display: flex;

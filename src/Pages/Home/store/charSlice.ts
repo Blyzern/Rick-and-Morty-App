@@ -1,20 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'src/app/store';
-import { HomeState } from './homeSlice.interface';
+import { CharState } from './charSlice.interface';
 
-const initialState: HomeState = {
+const initialState: CharState = {
   data: [{}],
   pages: {},
   isLoading: false,
   Status: 'idle',
 };
 
-export const homeSlice = createSlice({
-  name: 'home',
+export const charSlice = createSlice({
+  name: 'char',
   initialState,
   reducers: {
     getData: () => {},
-    setHomeData: (state, action: PayloadAction<[{}]>) => {
+    setCharData: (state, action: PayloadAction<[{}]>) => {
       state.data = action.payload;
     },
     setPages: (state, action: PayloadAction<{}>) => {
@@ -28,5 +28,5 @@ export const homeSlice = createSlice({
 
 export const selectData = (state: RootState) => state.home.Data;
 
-export const { setHomeData, setPages, setLoading, getData } = homeSlice.actions;
-export default homeSlice.reducer;
+export const { setCharData, setPages, setLoading, getData } = charSlice.actions;
+export default charSlice.reducer;

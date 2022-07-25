@@ -1,4 +1,4 @@
-export interface HomeState {
+export interface CharState {
   data: [{}];
   pages: object;
   isLoading: boolean;
