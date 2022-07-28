@@ -1,9 +1,17 @@
 export interface CharState {
   data: [{}];
-  pages: object;
+  info: {};
+  link: string;
   isLoading: boolean;
   Status: string;
 }
+
+export type InfoTypes = {
+  count?: number;
+  pages?: number;
+  next: string;
+  prev: string;
+};
 
 export type CharDataTypes = {
   id?: number;

@@ -1,21 +1,24 @@
-import { takeLatest, put, all, call } from 'redux-saga/effects';
+import { takeLatest, put, all, call, select } from 'redux-saga/effects';
 import { fetchData } from 'src/utils/fetchData';
 import { isEmpty } from 'lodash';
-import { CharDataTypes } from './charSlice.interface';
-import { setCharData, setLoading, getData } from './charSlice';
+import { CharDataTypes, InfoTypes } from './charSlice.interface';
+import { setCharData, setInfo, setLoading, getData } from './charSlice';
+import { linkSelector } from './charSelectors';
 
 type props = {
-  data: { info: {}; results: [CharDataTypes] };
+  data: { info: InfoTypes; results: [CharDataTypes] };
 };
 
 function* getCharacters() {
-  const characters: string = 'https://rickandmortyapi.com/api/character';
+  const link: string = yield select(linkSelector);
   try {
     yield put(setLoading(true));
-    const { data }: props = yield call(fetchData, characters, 'GET');
-    if (!isEmpty(data?.results)) {
+    const { data }: props = yield call(fetchData, link, 'GET');
+    if (!isEmpty(data?.results) && !isEmpty(data?.info)) {
       const { results } = data;
+      const { info } = data;
       yield put(setCharData(results));
+      yield put(setInfo(info));
       yield put(setLoading(false));
       return;
     }

@@ -10,23 +10,6 @@ import {
   CharacterInfo,
 } from './styled';
 
-// const translationsEN = {
-//   Locations: 'Last known location:',
-//   unknown: 'Unknown',
-// };
-// const translationsDE = {
-//   Locations: 'Letzte bekannte Position:',
-//   unknown: 'Unbekannt',
-// };
-// const translationsES = {
-//   Locations: 'Última localización conocida:',
-//   unknown: 'Desconocido',
-// };
-// const trnslationsIT = {
-//   Locations: 'Ultima posizione conosciuta:',
-//   unknown: 'Sconosciuta',
-// };
-
 export const CharacterBox: FC<CharDataTypes> = ({
   name,
   image,

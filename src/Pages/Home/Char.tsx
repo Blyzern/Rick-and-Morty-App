@@ -2,7 +2,7 @@ import React, { useEffect, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from 'src/app/store';
 import { CharacterBox } from 'src/components/CharacterBox';
-import { characterSelector } from './store/charSelectors';
+import { characterSelector, linkSelector } from './store/charSelectors';
 import { getData } from './store/charSlice';
 import { CharDataTypes } from './store/charSlice.interface';
 import { PageWrapper, ComponentWrapper, Spacer } from './styled';
@@ -10,10 +10,10 @@ import { PageWrapper, ComponentWrapper, Spacer } from './styled';
 export const Char: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const characters: [CharDataTypes] = useSelector(characterSelector);
-  console.log('🚀 ~ file: Home.tsx ~ line 13 ~ characters', characters);
+  const link: string = useSelector(linkSelector);
   useEffect(() => {
     dispatch(getData());
-  }, []);
+  }, [link]);
   return (
     <PageWrapper>
       <Spacer />
