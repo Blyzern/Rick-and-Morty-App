@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 30vw;
+  width: 350px;
   height: fit-content;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   margin-bottom: 1rem;
   background-color: #7ab0ff;
   @media (max-width: 480px) {
-    width: 70vw;
+    width: 330px;
   }
 `;
 export const ImageWrapper = styled.div`
@@ -17,7 +17,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 10vw;
+  width: 8rem;
   height: auto;
   border-radius: 5px;
   @media (max-width: 480px) {

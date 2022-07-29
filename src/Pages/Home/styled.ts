@@ -15,7 +15,11 @@ export const PageWrapper = styled.div`
 `;
 
 export const Spacer = styled.p`
+  height: 2rem;
   width: 100%;
+  @media (max-width: 480px) {
+    height: 4rem;
+  }
 `;
 
 export const ComponentWrapper = styled.div`

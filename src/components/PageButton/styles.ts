@@ -14,6 +14,10 @@ export const PrevButton = styled.button`
   border-radius: 0.5rem;
   font-size: 1.5rem;
   font-family: cursive;
+  @media (max-width: 550px) {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
 `;
 export const NextButton = styled.button`
   margin-left: 1rem;
@@ -25,6 +29,10 @@ export const NextButton = styled.button`
   border-radius: 0.5rem;
   font-size: 1.5rem;
   font-family: cursive;
+  @media (max-width: 550px) {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
 `;
 
 export const Wrapper = styled.div``;
