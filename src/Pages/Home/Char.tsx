@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from 'src/app/store';
 import { CharacterBox } from 'src/components/CharacterBox';
 import SyncLoader from 'react-spinners/SyncLoader';
+import { nanoid } from '@reduxjs/toolkit';
 import {
   characterSelector,
   linkSelector,
@@ -30,7 +31,7 @@ export const Char: FC = () => {
       <ComponentWrapper>
         {characters.map(({ id, name, image, status, location, species }) => (
           <CharacterBox
-            key={id}
+            key={id + nanoid()}
             name={name}
             image={image}
             status={status}
