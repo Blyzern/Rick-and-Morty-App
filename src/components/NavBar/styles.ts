@@ -18,7 +18,7 @@ export const NavWrapper = styled.div`
     ::-webkit-scrollbar {
       width: 0px;
     }
-    `;
+`;
 
 export const Nav = styled.nav`
   display: flex;

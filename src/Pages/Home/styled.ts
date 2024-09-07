@@ -23,12 +23,12 @@ export const Spacer = styled.p`
 `;
 
 export const ComponentWrapper = styled.div`
-  width: 70vw;
+  width: 90vw;
   height: fit-content;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-between;
   flex-wrap: wrap;
   @media (max-width: 480px) {
     margin-bottom: 4rem;
